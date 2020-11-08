@@ -1,13 +1,19 @@
 {
   "name": "segregated-model-on-front",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "philomagi<tooppoo56@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
