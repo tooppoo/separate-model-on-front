@@ -1,20 +1,16 @@
 {
-  "name": "model",
+  "name": "domain",
   "version": "0.0.1",
   "description": "domain model for user, which is segregated from view",
   "author": "philomagi <tooppoo56@gmail.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "lib/model.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "cart/lib"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
