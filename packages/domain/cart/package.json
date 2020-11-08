@@ -1,5 +1,5 @@
 {
-  "name": "domain",
+  "name": "@example/domain-cart",
   "version": "0.0.1",
   "description": "domain model for user, which is segregated from view",
   "author": "philomagi <tooppoo56@gmail.com>",
@@ -7,10 +7,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
-    "cart/lib"
+    "lib/"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "prebuild": "rm -r dist",
+    "prepublish": "npm run test && npm run build"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",

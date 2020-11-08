@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lerna run test --stream"
   },
   "keywords": [],
   "author": "philomagi<tooppoo56@gmail.com>",
   "workspaces": [
-    "packages/*"
+    "packages/**/*"
   ],
   "license": "MIT",
   "private": true,
