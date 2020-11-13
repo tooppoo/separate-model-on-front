@@ -1,0 +1,33 @@
+{
+  "name": "@example/jquery",
+  "version": "1.0.0",
+  "description": "view implemented by jquery",
+  "author": "philomagi <tooppoo56@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "serve": "parcel index.html",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "alias": {
+    "@example/domain-cart": "../../node_modules/@example/domain-cart/dist/"
+  },
+  "dependencies": {
+    "@example/domain-cart": "^0.0.1",
+    "jquery": "^3.5.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.4",
+    "parcel": "^1.12.4",
+    "typescript": "^4.0.5"
+  }
+}

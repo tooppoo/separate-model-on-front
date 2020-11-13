@@ -6,6 +6,8 @@
   "scripts": {
     "serve:vue": "lerna run serve --scope=@example/vue --stream",
     "build:vue": "lerna run build --scope=@example/vue --stream",
+    "serve:jquery": "lerna run serve --scope=@example/jquery --stream",
+    "build:domain:cart": "lerna run build --scope=@example/domain-cart --stream",
     "test": "lerna run test --stream"
   },
   "keywords": [],

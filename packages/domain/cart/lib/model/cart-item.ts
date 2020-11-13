@@ -70,6 +70,10 @@ export class CartItem {
     return this.item.id
   }
 
+  get price (): UnitPrice {
+    return this.item.unitPrice
+  }
+
   get payment (): number {
     return this.item.unitPrice.applyCount(this.count)
   }
