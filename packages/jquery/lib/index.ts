@@ -11,13 +11,37 @@ $(async () => {
 
   await interaction.initialize()
 
-  const list = interaction.cartItemList
+  let list = interaction.cartItemList
 
-  $('#cart-item-list').html(
-    buildCartItemList(list)
-  )
-  $('#cart-summary').html(
-    buildSummary(list)
-  )
+  const setHandler = () => {
+    list.toArray().forEach((item) => {
+      $(`#remove__${item.id}`).on('click', () => {
+        interaction.remove(item).then(update)
+      })
+      $(`#later__${item.id}`).on('click', () => {
+        interaction.buyLater(item).then(update)
+      })
+      $(`#now__${item.id}`).on('click', () => {
+        interaction.buyNow(item).then(update)
+      })
+    })
+  }
+  const render = () => {
+    $('#cart-item-list').html(
+      buildCartItemList(list)
+    )
+    $('#cart-summary').html(
+      buildSummary(list)
+    )
+
+    setHandler()
+  }
+  const update = () => {
+    list = interaction.cartItemList
+
+    render()
+  }
+
+  render()
 })
 
