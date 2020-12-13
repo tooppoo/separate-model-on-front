@@ -9,6 +9,7 @@
     "jquery:serve": "lerna run serve --scope=@example/jquery --stream",
     "jquery:build": "lerna run build --scope=@example/jquery --stream",
     "domain:cart:build": "lerna run build --scope=@example/domain-cart --stream",
+    "domain:cart:test": "lerna run test --scope=@example/domain-cart --stream",
     "all:serve": "lerna run serve --stream --parallel",
     "all:build": "lerna run build --stream --parallel",
     "all:build:watch": "lerna run build:watch --stream --parallel",

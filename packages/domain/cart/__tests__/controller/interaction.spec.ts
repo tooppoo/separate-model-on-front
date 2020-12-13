@@ -72,19 +72,21 @@ describe(CartInteraction, () => {
     })
   })
   describe('changeCount', () => {
-    it('should update count in cart of target', async () => {
-      await interaction.changeCount(item1, CountInCart.valueOf(3))
+    describe('new count > 0', () => {
+      it('should update count in cart of target', async () => {
+        await interaction.changeCount(item1, CountInCart.valueOf(3))
 
-      await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
-        item1.changeCount(CountInCart.valueOf(3)),
-        item2,
-        item3
-      ]))
-    })
-    it('should save via repository', async () => {
-      await interaction.changeCount(item1, CountInCart.valueOf(3))
+        await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
+          item1.changeCount(CountInCart.valueOf(3)),
+          item2,
+          item3
+        ]))
+      })
+      it('should save via repository', async () => {
+        await interaction.changeCount(item1, CountInCart.valueOf(3))
 
-      expect(repository.saved).toStrictEqual([item1.changeCount(CountInCart.valueOf(3))])
+        expect(repository.saved).toStrictEqual([item1.changeCount(CountInCart.valueOf(3))])
+      })
     })
   })
 
