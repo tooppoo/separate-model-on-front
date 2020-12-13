@@ -8,7 +8,9 @@
     "vue:build": "lerna run build --scope=@example/vue --stream",
     "jquery:serve": "lerna run serve --scope=@example/jquery --stream",
     "domain:cart:build": "lerna run build --scope=@example/domain-cart --stream",
-    "all:test": "lerna run test --stream"
+    "all:build": "lerna run build --stream",
+    "all:test": "lerna run test --stream",
+    "list": "lerna list --stream"
   },
   "keywords": [],
   "author": "philomagi<tooppoo56@gmail.com>",
