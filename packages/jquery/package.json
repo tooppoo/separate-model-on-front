@@ -16,8 +16,7 @@
   "scripts": {
     "serve": "parcel index.html --port 9001",
     "build": "parcel build index.html",
-    "build:watch": "parcel build:watch index.html",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build:watch": "parcel build:watch index.html"
   },
   "alias": {
     "@example/domain-cart": "../../node_modules/@example/domain-cart/dist/"
