@@ -13,6 +13,7 @@ const buildCartItem = (cartItem: CartItem): string => `
             ×
             <label >
                 <input
+                    id="cart-item__editor__unit__count--${cartItem.id}"
                     type="number"
                     min="0"
                     class="cart-item__editor__unit__count"

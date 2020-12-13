@@ -1,4 +1,5 @@
 
+import { CountInCart } from '@example/domain-cart/model'
 import { buildCartItemList } from './cart-item'
 import { CartInteraction } from '@example/domain-cart/controller/interaction'
 import { OnMemoryCartItemListRepository } from '@example/domain-cart/infrastructure/repository/on-memory'
@@ -23,6 +24,13 @@ $(async () => {
       })
       $(`#now__${item.id}`).on('click', () => {
         interaction.buyNow(item).then(update)
+      })
+      $(`#cart-item__editor__unit__count--${item.id}`).on('change', (event) => {
+        const element = event.target as unknown as HTMLInputElement
+
+        const newCount = CountInCart.valueOf(parseInt(element.value, 10))
+
+        interaction.changeCount(item, newCount).then(update)
       })
     })
   }
