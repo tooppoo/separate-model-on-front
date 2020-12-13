@@ -33,7 +33,7 @@ const selectButton = (cartItem: CartItem): string =>
 
 const buildImageStyle = (cartItem: CartItem): string => {
   const base = {
-    "background-image": `url(${cartItem.item.image})`,
+    "background-image": `url(${cartItem.picture.url})`,
     "background-position": "center",
     "background-repeat": "no-repeat",
     "background-size": "contain",

@@ -38,7 +38,6 @@ import { Component, Emit, Prop } from "vue-property-decorator";
 import {
   CartItem,
   CartItemCount,
-  Item
 } from "@example/domain-cart/model/cart-item";
 
 @Component
@@ -54,13 +53,9 @@ export default class CartItemView extends Vue {
     return this.cartItem.count;
   }
 
-  get item(): Item {
-    return this.cartItem.item;
-  }
-
   get itemImageClass(): object {
     const base = {
-      "background-image": `url(${this.item.image})`,
+      "background-image": `url(${this.cartItem.picture.url})`,
       "background-position": "center",
       "background-repeat": "no-repeat",
       "background-size": "contain",

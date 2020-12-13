@@ -61,7 +61,7 @@ export class CartItem {
   }
 
   private constructor (
-    readonly item: Item,
+    private readonly item: Item,
     readonly count: CartItemCount,
     private readonly state: CartItemState
   ) {}
@@ -76,6 +76,10 @@ export class CartItem {
 
   get payment (): number {
     return this.item.unitPrice.applyCount(this.count)
+  }
+
+  get picture (): Picture {
+    return new Picture(this.item.image)
   }
 
   equals (other: CartItem): boolean {
@@ -167,6 +171,10 @@ export class UnitPrice {
   toString (): string {
     return `${this.value}`
   }
+}
+
+class Picture {
+  constructor(readonly url: string) {}
 }
 
 export interface CartItemState {
