@@ -8,7 +8,7 @@ const buildCartItem = (cartItem: CartItem): string => `
     <div class="cart-item__editor">
         <div class="cart-item__editor__unit">
             <span class="cart-item__editor__unit__price">
-                ${cartItem.price.toNumber()}円
+                ${cartItem.unitPrice.toNumber()}円
             </span>
             ×
             <label >
