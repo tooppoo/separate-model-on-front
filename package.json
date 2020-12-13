@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve:vue": "lerna run serve --scope=@example/vue --stream",
-    "build:vue": "lerna run build --scope=@example/vue --stream",
-    "serve:jquery": "lerna run serve --scope=@example/jquery --stream",
-    "build:domain:cart": "lerna run build --scope=@example/domain-cart --stream",
+    "vue:serve": "lerna run serve --scope=@example/vue --stream",
+    "vue:build": "lerna run build --scope=@example/vue --stream",
+    "jquery:serve": "lerna run serve --scope=@example/jquery --stream",
+    "domain:cart:build": "lerna run build --scope=@example/domain-cart --stream",
     "test": "lerna run test --stream"
   },
   "keywords": [],
