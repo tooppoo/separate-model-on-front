@@ -70,6 +70,10 @@ export class CartItem {
     return this.item.id
   }
 
+  get name (): string {
+    return this.item.name
+  }
+
   get unitPrice (): UnitPrice {
     return this.item.unitPrice
   }

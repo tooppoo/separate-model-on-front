@@ -1,11 +1,11 @@
 <template>
   <li class="cart-item">
-    {{ item.name }}
+    {{ cartItem.name }}
     <div class="cart-item__image" :style="itemImageClass" />
     <div class="cart-item__editor">
       <div class="cart-item__editor__unit">
         <span class="cart-item__editor__unit__price">
-          {{ item.unitPrice }}円
+          {{ cartItem.unitPrice }}円
         </span>
         &nbsp;×&nbsp;
         <label>
