@@ -83,7 +83,7 @@ export default class CartItemView extends Vue {
   onChangeCount(newCount: string) {
     this.emitChangeCount(
       this.cartItem,
-      CountInCart.valueOf(parseInt(newCount, 10))
+      CountInCart.parse(newCount)
     );
   }
 

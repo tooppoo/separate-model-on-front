@@ -28,7 +28,7 @@ $(async () => {
       $(`#cart-item__editor__unit__count--${item.id}`).on('change', (event) => {
         const element = event.target as unknown as HTMLInputElement
 
-        const newCount = CountInCart.valueOf(parseInt(element.value, 10))
+        const newCount = CountInCart.parse(element.value)
 
         interaction.changeCount(item, newCount).then(update)
       })

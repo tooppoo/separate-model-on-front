@@ -8,6 +8,9 @@ export class CountInCart {
 
     return new CountInCart(value)
   }
+  static parse(value: string, radix: number = 10): CountInCart {
+    return CountInCart.valueOf(parseInt(value, radix))
+  }
 
   private constructor(private readonly value: number) {
     if (value < 0) {
