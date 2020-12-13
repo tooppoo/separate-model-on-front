@@ -26,11 +26,11 @@
 <script lang="ts">
 import { CartInteraction } from "@example/domain-cart/controller/interaction";
 import {
-  CartItemList,
   CartItem,
-  CartItemCount
-} from "@example/domain-cart/model/cart-item";
-import { CartItemListRepository } from "@example/domain-cart/model/repository";
+  CartItemList,
+  CartItemListRepository,
+  CountInCart
+} from "@example/domain-cart/model";
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
 import CartItemView from "./cart/CartItem.vue";
@@ -75,7 +75,7 @@ export default class Cart extends Vue {
     this.handleUpdate(() => this.interaction.buyNow(cartItem));
   }
 
-  changeCount(cartItem: CartItem, newCount: CartItemCount) {
+  changeCount(cartItem: CartItem, newCount: CountInCart) {
     this.handleUpdate(() => this.interaction.changeCount(cartItem, newCount));
   }
 
@@ -86,8 +86,6 @@ export default class Cart extends Vue {
         this.cartItems = this.interaction.cartItemList;
       })
       .catch(error => {
-        console.error({ error });
-
         alert(error.toString());
       });
   }

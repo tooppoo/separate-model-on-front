@@ -1,5 +1,9 @@
-import { CartItem, CartItemCount, CartItemList } from '../../lib/model/cart-item'
-import { CartItemListRepository } from '../../lib/model/repository'
+import {
+  CartItem,
+  CartItemList,
+  CountInCart,
+  CartItemListRepository,
+} from '../../lib/model'
 import { CartInteraction } from '../../lib/controller/interaction'
 import { CartItemBuilder } from '../cart-item-builder'
 
@@ -69,18 +73,18 @@ describe(CartInteraction, () => {
   })
   describe('changeCount', () => {
     it('should update count in cart of target', async () => {
-      await interaction.changeCount(item1, CartItemCount.valueOf(3))
+      await interaction.changeCount(item1, CountInCart.valueOf(3))
 
       await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
-        item1.changeCount(CartItemCount.valueOf(3)),
+        item1.changeCount(CountInCart.valueOf(3)),
         item2,
         item3
       ]))
     })
     it('should save via repository', async () => {
-      await interaction.changeCount(item1, CartItemCount.valueOf(3))
+      await interaction.changeCount(item1, CountInCart.valueOf(3))
 
-      expect(repository.saved).toStrictEqual([item1.changeCount(CartItemCount.valueOf(3))])
+      expect(repository.saved).toStrictEqual([item1.changeCount(CountInCart.valueOf(3))])
     })
   })
 

@@ -1,5 +1,9 @@
-import { CartItem, CartItemCount, CartItemList } from '../model/cart-item'
-import { CartItemListRepository } from '../model/repository'
+import {
+  CartItem,
+  CartItemList,
+  CountInCart,
+  CartItemListRepository,
+} from '../model'
 
 export class CartInteraction {
   static create ({ repository }: { repository: CartItemListRepository }): CartInteraction {
@@ -26,7 +30,7 @@ export class CartInteraction {
     await this.tryUpdate(target.buyLater())
   }
 
-  async changeCount (target: CartItem, newCount: CartItemCount): Promise<void> {
+  async changeCount (target: CartItem, newCount: CountInCart): Promise<void> {
     await this.tryUpdate(target.changeCount(newCount))
   }
 

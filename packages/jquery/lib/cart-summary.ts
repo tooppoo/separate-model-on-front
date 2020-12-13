@@ -1,4 +1,4 @@
-import { CartItemList } from '@example/domain-cart/model/cart-item'
+import { CartItemList } from '@example/domain-cart/model'
 
 export const buildSummary = (list: CartItemList) => `
 <div class="cart-summary__item-count">

@@ -1,4 +1,4 @@
-import { CartItem, CartItemList } from '@example/domain-cart/dist/model/cart-item'
+import { CartItem, CartItemList } from '@example/domain-cart/model'
 
 export const buildCartItemList = (list: CartItemList): string => list.toArray().map(buildCartItem).join('')
 

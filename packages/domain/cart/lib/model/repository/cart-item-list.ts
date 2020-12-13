@@ -1,4 +1,4 @@
-import { CartItem, CartItemList } from './cart-item'
+import { CartItem, CartItemList } from '..'
 
 export interface CartItemListRepository {
   list(): Promise<CartItemList>

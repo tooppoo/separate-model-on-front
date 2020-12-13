@@ -1,4 +1,7 @@
-import { CartItem, CartItemCount, CartItemState, Item, UnitPrice } from '../lib/model/cart-item'
+import { CountInCart } from '../lib/model'
+import { CartItem, Item } from '../lib/model/cart-item/cart-item'
+import { CartItemState } from '../lib/model/cart-item/value/state'
+import { UnitPrice } from '../lib/model/cart-item/value/unit-price'
 
 export class CartItemBuilder {
   static create (): CartItemBuilder {
@@ -9,7 +12,7 @@ export class CartItemBuilder {
         image: 'image.png',
         unitPrice: UnitPrice.valueOf(1000)
       },
-      CartItemCount.valueOf(1),
+      CountInCart.valueOf(1),
       {
         buyNow: true
       }
@@ -18,7 +21,7 @@ export class CartItemBuilder {
 
   private constructor (
     private item: Item,
-    private count: CartItemCount,
+    private count: CountInCart,
     private state: CartItemState
   ) { }
 
@@ -47,7 +50,7 @@ export class CartItemBuilder {
   countIs (count: number): CartItemBuilder {
     return new CartItemBuilder(
       this.item,
-      CartItemCount.valueOf(count),
+      CountInCart.valueOf(count),
       this.state
     )
   }

@@ -35,10 +35,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Emit, Prop } from "vue-property-decorator";
-import {
-  CartItem,
-  CartItemCount,
-} from "@example/domain-cart/model/cart-item";
+import { CartItem, CountInCart } from "@example/domain-cart/model";
 
 @Component
 export default class CartItemView extends Vue {
@@ -49,7 +46,7 @@ export default class CartItemView extends Vue {
     return this.cartItem.willBuyNow;
   }
 
-  get count(): CartItemCount {
+  get count(): CountInCart {
     return this.cartItem.count;
   }
 
@@ -86,12 +83,12 @@ export default class CartItemView extends Vue {
   onChangeCount(newCount: string) {
     this.emitChangeCount(
       this.cartItem,
-      CartItemCount.valueOf(parseInt(newCount, 10))
+      CountInCart.valueOf(parseInt(newCount, 10))
     );
   }
 
   @Emit("change-count")
-  emitChangeCount(_item: CartItem, _newCount: CartItemCount) {}
+  emitChangeCount(_item: CartItem, _newCount: CountInCart) {}
 }
 </script>
 
