@@ -14,8 +14,9 @@
     "lib"
   ],
   "scripts": {
-    "serve": "parcel index.html",
+    "serve": "parcel index.html --port 9001",
     "build": "parcel build index.html",
+    "build:watch": "parcel build:watch index.html",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "alias": {

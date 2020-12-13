@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port 9000",
     "build": "vue-cli-service build",
+    "build:watch": "vue-cli-service build --watch",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },

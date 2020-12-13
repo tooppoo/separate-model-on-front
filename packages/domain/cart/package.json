@@ -12,6 +12,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "lint": "eslint",
     "prebuild": "tsc --build --clean .",
     "prepublish": "npm run build"
