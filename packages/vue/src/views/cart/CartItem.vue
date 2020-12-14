@@ -12,7 +12,7 @@
           <input
             class="cart-item__editor__unit__count"
             type="number"
-            min="0"
+            min="1"
             :value="count"
             @change="onChangeCount($event.target.value)"
           />個
@@ -81,10 +81,7 @@ export default class CartItemView extends Vue {
   onBuyNow(_item: CartItem) {}
 
   onChangeCount(newCount: string) {
-    this.emitChangeCount(
-      this.cartItem,
-      CountInCart.parse(newCount)
-    );
+    this.emitChangeCount(this.cartItem, CountInCart.parse(newCount));
   }
 
   @Emit("change-count")

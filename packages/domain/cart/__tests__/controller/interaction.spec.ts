@@ -72,21 +72,40 @@ describe(CartInteraction, () => {
     })
   })
   describe('changeCount', () => {
-    describe('new count > 0', () => {
-      it('should update count in cart of target', async () => {
-        await interaction.changeCount(item1, CountInCart.valueOf(3))
+    describe('new count', () => {
+      describe('> 0', () => {
+        it('should update count in cart of target', async () => {
+          await interaction.changeCount(item1, CountInCart.valueOf(3))
 
-        await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
-          item1.changeCount(CountInCart.valueOf(3)),
-          item2,
-          item3
-        ]))
-      })
-      it('should save via repository', async () => {
-        await interaction.changeCount(item1, CountInCart.valueOf(3))
+          await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
+            item1.changeCount(CountInCart.valueOf(3)),
+            item2,
+            item3
+          ]))
+        })
+        it('should save via repository', async () => {
+          await interaction.changeCount(item1, CountInCart.valueOf(3))
 
-        expect(repository.saved).toStrictEqual([item1.changeCount(CountInCart.valueOf(3))])
+          expect(repository.saved).toStrictEqual([item1.changeCount(CountInCart.valueOf(3))])
+        })
       })
+      describe('== 0', () => {
+        it('should ignore', async () => {
+          await interaction.changeCount(item1, CountInCart.valueOf(0))
+
+          await expect(interaction.cartItemList).toStrictEqual(CartItemList.valueOf([
+            item1,
+            item2,
+            item3
+          ]))
+        })
+        it('should not save via repository', async () => {
+          await interaction.changeCount(item1, CountInCart.valueOf(0))
+
+          expect(repository.saved).toStrictEqual([])
+        })
+      })
+      // can not create CountInCart less than 0
     })
   })
 

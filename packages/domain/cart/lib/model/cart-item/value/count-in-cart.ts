@@ -22,6 +22,13 @@ export class CountInCart {
     return CountInCart.valueOf(this.value + other.value)
   }
 
+  get exists(): boolean {
+    return this.moreThan(CountInCart.zero)
+  }
+  moreThan(other: CountInCart): boolean {
+    return this.value > other.value
+  }
+
   toNumber(): number {
     return this.value
   }

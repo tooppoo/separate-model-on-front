@@ -15,7 +15,7 @@ const buildCartItem = (cartItem: CartItem): string => `
                 <input
                     id="cart-item__editor__unit__count--${cartItem.id}"
                     type="number"
-                    min="0"
+                    min="1"
                     class="cart-item__editor__unit__count"
                     value="${cartItem.count.toNumber()}"
                 >個

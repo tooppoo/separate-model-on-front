@@ -31,7 +31,9 @@ export class CartInteraction {
   }
 
   async changeCount (target: CartItem, newCount: CountInCart): Promise<void> {
-    await this.tryUpdate(target.changeCount(newCount))
+    if (newCount.exists) {
+      await this.tryUpdate(target.changeCount(newCount))
+    }
   }
 
   async remove (target: CartItem): Promise<void> {
