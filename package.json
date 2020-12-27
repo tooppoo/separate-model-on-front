@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "react:serve": "lerna run serve --scope=@example/react --stream",
+    "react:build": "lerna run build --scope=@example/react --stream",
+    "react:test": "lerna run test --scope=@example/react --stream",
     "vue:serve": "lerna run serve --scope=@example/vue --stream",
     "vue:build": "lerna run build --scope=@example/vue --stream",
     "jquery:serve": "lerna run serve --scope=@example/jquery --stream",
