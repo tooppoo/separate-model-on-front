@@ -1,5 +1,6 @@
 
 .PHONY: init
+.PHONY: ci
 .PHONY: clean
 
 init:
