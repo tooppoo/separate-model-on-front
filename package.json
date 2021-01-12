@@ -22,9 +22,21 @@
   },
   "keywords": [],
   "author": "philomagi<tooppoo56@gmail.com>",
-  "workspaces": [
-    "packages/**/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/**/*"
+    ],
+    "nohoist": [
+      "**/@vue/*",
+      "**/@babel/*",
+      "**/@jest/*",
+      "**/@parcel/*",
+      "**/react*",
+      "**/*/*babel*",
+      "**/*/*jest*",
+      "**/parcel"
+    ]
+  },
   "license": "MIT",
   "private": true,
   "devDependencies": {
