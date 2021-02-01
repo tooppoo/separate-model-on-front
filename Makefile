@@ -5,6 +5,7 @@
 
 init:
 	yarn
+	yarn domain:cart:build
 	yarn lerna bootstrap
 	yarn lerna link
 
