@@ -3,6 +3,14 @@
 
 example of frontend software design that separates Model and View.
 
+# concept
+- There is no need to embed UI logic in UI components.
+- There is no need to use the functions of the UI library to make UI logic independent.
+- Making UI logic independent is enable in general ways.
+- By making UI logic independent, testing become easier.
+- By making UI logic independent, your software and UI library become loosely coupled.
+- By Making UI logic independent, UI knowledge can become more explicit
+
 # usage
 ## initialize
 install and setup dependencies with [lerna](https://github.com/lerna/lerna)
@@ -50,14 +58,6 @@ yarn domain:cart:test
 yarn vue:test
 yarn react:test
 ```
-
-# concept
-- There is no need to embed UI logic in UI components.
-- There is no need to use the functions of the UI library to make UI logic independent.
-- Making UI logic independent is enable in general ways.
-- By making UI logic independent, testing become easier.
-- By making UI logic independent, your software and UI library become loosely coupled.
-- By Making UI logic independent, UI knowledge can become more explicit
 
 # packages
 ## domain
