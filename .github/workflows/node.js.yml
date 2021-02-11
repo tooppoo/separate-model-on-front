@@ -26,6 +26,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    #  https://github.com/actions/cache/blob/main/examples.md#node---yarn:
+    - name: Get yarn cache directory
+      id: yarn-cache-dir
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
     # https://github.com/actions/cache/blob/main/examples.md#node---lerna
     - name: Cache node_modulesa
       uses: actions/cache@v2
@@ -35,6 +40,7 @@ jobs:
         path: |
           node_modules
           */*/node_modules
+          ${{ steps.yarn-cache-dir.outputs.dir }}
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
