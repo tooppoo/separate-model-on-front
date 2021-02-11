@@ -1,12 +1,12 @@
+import { OnMemoryCartItemListRepository } from '@example/domain-cart/dist/infrastructure/repository/on-memory'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Cart } from './cart/Cart'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Cart repository={new OnMemoryCartItemListRepository()}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

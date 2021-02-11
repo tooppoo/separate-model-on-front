@@ -45,6 +45,10 @@ export class CartItemList {
     )
   }
 
+  map<T>(f: (c: CartItem) => T): T[] {
+    return this.cartItems.map(f)
+  }
+
   toArray(): CartItem[] {
     return [...this.cartItems] // shallow copy
   }
