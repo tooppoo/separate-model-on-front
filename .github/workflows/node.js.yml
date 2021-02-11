@@ -30,7 +30,7 @@ jobs:
       env:
         cache-name: root-node-modules-cache
       with:
-        path: ./.npm
+        path: ~/.npm
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}
