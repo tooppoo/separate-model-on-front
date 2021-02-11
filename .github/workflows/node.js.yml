@@ -25,13 +25,15 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Cache node_modulesa for root
+
+    # https://github.com/actions/cache/blob/main/examples.md#node---lerna
+    - name: Cache node_modulesa
       uses: actions/cache@v2
-      env:
-        cache-name: root-node-modules-cache
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./yarn.lock') }}
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}
           ${{ runner.os }}-build-
