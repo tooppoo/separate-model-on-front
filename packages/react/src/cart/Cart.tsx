@@ -11,7 +11,7 @@ export interface CartProps {
 export function Cart(props: CartProps) {
   const [interaction] = useState(CartInteraction.create(props))
   const [list, setList] = useState(() => {
-    interaction.initialize().then(() => setList(interaction.cartItemList))
+    interaction.initialize().then(() =>setList(interaction.cartItemList))
 
     return interaction.cartItemList
   })
