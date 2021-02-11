@@ -20,7 +20,9 @@
       </div>
       <div class="cart-item__editor__price">計{{ cartItem.payment }}円</div>
       <button @click="onRemove(cartItem)">カートから取り除く</button>
-      <button v-if="willPurchase" @click="onBuyLater(cartItem)">後で買う</button>
+      <button v-if="willPurchase" @click="onBuyLater(cartItem)">
+        後で買う
+      </button>
       <button v-else @click="onBuyNow(cartItem)">今すぐ買う</button>
     </div>
   </li>

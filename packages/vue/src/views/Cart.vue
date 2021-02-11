@@ -29,7 +29,7 @@ import {
   CartItem,
   CartItemList,
   CartItemListRepository,
-  CountInCart
+  CountInCart,
 } from "@example/domain-cart/model";
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
@@ -37,8 +37,8 @@ import CartItemView from "./cart/CartItem.vue";
 
 @Component({
   components: {
-    CartItem: CartItemView
-  }
+    CartItem: CartItemView,
+  },
 })
 export default class Cart extends Vue {
   @Prop({ required: true })
@@ -50,12 +50,12 @@ export default class Cart extends Vue {
     return CartInteraction.create({ repository: this.repository });
   }
 
-  created() {
+  created(): void {
     this.initialize();
   }
 
   @Watch("$route")
-  async initialize() {
+  async initialize(): Promise<void> {
     this.handleUpdate(() => this.interaction.initialize());
   }
 
@@ -63,29 +63,29 @@ export default class Cart extends Vue {
     return this.cartItems.onlyBuyNow();
   }
 
-  remove(cartItem: CartItem) {
+  remove(cartItem: CartItem): void {
     this.handleUpdate(() => this.interaction.remove(cartItem));
   }
 
-  buyLater(cartItem: CartItem) {
+  buyLater(cartItem: CartItem): void {
     this.handleUpdate(() => this.interaction.buyLater(cartItem));
   }
 
-  buyNow(cartItem: CartItem) {
+  buyNow(cartItem: CartItem): void {
     this.handleUpdate(() => this.interaction.buyNow(cartItem));
   }
 
-  changeCount(cartItem: CartItem, newCount: CountInCart) {
+  changeCount(cartItem: CartItem, newCount: CountInCart): void {
     this.handleUpdate(() => this.interaction.changeCount(cartItem, newCount));
   }
 
-  private handleUpdate(command: () => Promise<void>) {
+  private handleUpdate(command: () => Promise<void>): void {
     command()
       .then(() => {
         // リアクティブ検知のため、更新の都度再代入
         this.cartItems = this.interaction.cartItemList;
       })
-      .catch(error => {
+      .catch((error) => {
         alert(error.toString());
       });
   }

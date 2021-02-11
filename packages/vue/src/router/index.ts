@@ -9,7 +9,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/cart",
@@ -19,15 +19,15 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/Cart.vue"),
     props: () => ({
-      repository: new OnMemoryCartItemListRepository()
-    })
-  }
+      repository: new OnMemoryCartItemListRepository(),
+    }),
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;
