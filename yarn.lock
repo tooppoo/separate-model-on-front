@@ -4147,10 +4147,10 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
 
-"@testing-library/user-event@12.8.0":
-  version "12.8.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.8.0.tgz#e07e52d4109a606772f72fa40641b284e8686221"
-  integrity sha512-5+k4U3X6XaFDSBSu6tsD02HVfzuOiPcygQmmYFE2aQQ0e5wRSxWRoU80UH1msa9Q6wuxa0BQsAmwAAAMydcscg==
+"@testing-library/user-event@12.8.1":
+  version "12.8.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.8.1.tgz#aa897d6e7f0cf2208385abc2da2ac3f5844bbd00"
+  integrity sha512-u521YhkCKip0DQNDpfj9V97PU7UlCTkW5jURUD4JipuVe/xDJ32dJSIHlT2pqAs/I91OFB8p6LtqaLZpOu8BWQ==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
@@ -4320,7 +4320,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@*", "@types/jest@26.x":
+"@types/jest@*":
   version "26.0.19"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.19.tgz#e6fa1e3def5842ec85045bd5210e9bb8289de790"
   integrity sha512-jqHoirTG61fee6v6rwbnEuKhpSKih0tuhqeFbCmMmErhtu3BYlOZaXWjffgOstMM4S/3iQD31lI5bGLTrs97yQ==
@@ -17885,12 +17885,11 @@ tryer@^1.0.1:
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
 
-ts-jest@26.5.2:
-  version "26.5.2"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.2.tgz#5281d6b44c2f94f71205728a389edc3d7995b0c4"
-  integrity sha512-bwyJ2zJieSugf7RB+o8fgkMeoMVMM2KPDE0UklRLuACxjwJsOrZNo6chrcScmK33YavPSwhARffy8dZx5LJdUQ==
+ts-jest@26.5.3:
+  version "26.5.3"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.3.tgz#a6ee00ba547be3b09877550df40a1465d0295554"
+  integrity sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==
   dependencies:
-    "@types/jest" "26.x"
     bs-logger "0.x"
     buffer-from "1.x"
     fast-json-stable-stringify "2.x"
