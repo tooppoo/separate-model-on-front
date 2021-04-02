@@ -16,7 +16,8 @@
   "scripts": {
     "serve": "parcel index.html --port 9001",
     "build": "parcel build index.html",
-    "build:watch": "parcel build:watch index.html"
+    "build:watch": "parcel build:watch index.html",
+    "clean": "rimraf ./dist && rimraf ./.cache"
   },
   "alias": {
     "@example/domain-cart": "../../node_modules/@example/domain-cart/dist/"
@@ -31,6 +32,7 @@
     "@types/jquery": "3.5.5",
     "jest": "26.6.3",
     "parcel": "next",
+    "rimraf": "3.0.2",
     "ts-jest": "26.5.4",
     "typescript": "4.1.5"
   }

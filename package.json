@@ -16,9 +16,10 @@
     "domain:cart:test": "lerna run test --scope=@example/domain-cart --stream",
     "start": "yarn serve",
     "serve": "lerna run serve --stream --parallel",
-    "build": "lerna run build --stream --parallel",
+    "build": "lerna run build --stream",
     "build:watch": "lerna run build:watch --stream --parallel",
     "test": "lerna run test --stream --parallel",
+    "clean": "lerna run clean --stream --parallel",
     "packages": "lerna list"
   },
   "keywords": [],

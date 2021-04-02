@@ -2,6 +2,7 @@
 .PHONY: init
 .PHONY: ci
 .PHONY: clean
+.PHONY: reset
 
 init:
 	yarn
@@ -14,5 +15,10 @@ ci:
 	yarn test
 
 clean:
-	yarn lerna clean
-	rm -r node_modules
+	yarn clean
+	yarn lerna clean --yes
+	npx rimraf ./node_modules
+	npx rimraf ./.parcel-cache
+
+reset:
+	${MAKE} clean && ${MAKE} init
