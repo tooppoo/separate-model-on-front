@@ -1,4 +1,4 @@
-import { CartInteraction } from '@example/domain-cart/dist/controller/interaction';
+import { CartInteraction } from '@example/domain-cart/dist/controller/interaction'
 import { CartItemListRepository } from '@example/domain-cart/dist/model'
 import React, { useEffect, useState } from 'react'
 import { CartItem } from './CartItem'

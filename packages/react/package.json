@@ -3,6 +3,7 @@
   "license": "MIT",
   "version": "0.1.0",
   "dependencies": {
+    "@example/domain-cart": "^0.0.1",
     "@testing-library/jest-dom": "5.11.10",
     "@testing-library/react": "11.2.6",
     "@testing-library/user-event": "13.1.1",

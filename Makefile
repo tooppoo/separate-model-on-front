@@ -17,8 +17,6 @@ ci:
 clean:
 	yarn clean
 	yarn lerna clean --yes
-	npx rimraf ./node_modules
-	npx rimraf ./.parcel-cache
 
 reset:
 	${MAKE} clean && ${MAKE} init
