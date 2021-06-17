@@ -7,7 +7,7 @@ example of frontend software design that separates Model and View.
 
 - There is no need to embed logic for UI directly in the UI components provided by the UI library.
 - You can create UI logic that is independent of the UI library without using the UI library or its functions.
-- You can use common software design techniques to create UI logic independent of the UI library. No special theory or technology is necessarily required.
+- You can use common software design techniques to create UI logic independent of the UI library. No special theory or technique is necessarily required.
 - By making the logic for UI independent, you can easily test only the logic for UI.
 - By making the UI logic independent, you can make the software and UI library loosely coupled.
 - By making the UI logic independent, knowledge of UI become more explicit.
