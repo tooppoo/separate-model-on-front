@@ -41,6 +41,9 @@
   },
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=14.0.0 || >=16.0.0 <17.0.0"
+  },
   "devDependencies": {
     "lerna": "4.0.0"
   }
