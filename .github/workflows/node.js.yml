@@ -18,9 +18,9 @@ jobs:
       matrix:
         node-version: [14.x, 16.x]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -31,7 +31,7 @@ jobs:
 
     # https://github.com/actions/cache/blob/main/examples.md#node---lerna
     - name: Cache node_modulesa
-      uses: actions/cache@v3
+      uses: actions/cache@2f8e54208210a422b2efd51efaa6bd6d7ca8920f # v3
       env:
         cache-name: node-modules-cache
       with:
