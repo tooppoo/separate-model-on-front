@@ -1,49 +1,27 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
-
+name: Test
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build:
-
+  unit-test:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
+    permissions:
+      contents: read # チェックアウトとビルドのため
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      # setup
+      - uses: actions/checkout@master
+      - name: Setup pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
 
-    #  https://github.com/actions/cache/blob/main/examples.md#node---yarn:
-    - name: Get yarn cache directory
-      id: yarn-cache-dir
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+        with:
+          node-version-file: ".node-version"
+          cache: "pnpm"
+      - name: setup
+        run: pnpm install --frozen-lockfile
 
-    # https://github.com/actions/cache/blob/main/examples.md#node---lerna
-    - name: Cache node_modulesa
-      uses: actions/cache@v3
-      env:
-        cache-name: node-modules-cache
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-          ${{ steps.yarn-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
-    - run: make init
-    - run: make ci
+      # test
+      - name: test
+        run: pnpm run test
