@@ -2,8 +2,8 @@ import {
   CartItem,
   CartItemList,
   CountInCart
-} from '../../lib/model'
-import { CartItemBuilder } from '../cart-item-builder'
+} from '.'
+import { CartItemBuilder } from '../../__tests__/cart-item-builder'
 
 describe(CartItemList, () => {
   describe('totalPrice', () => {

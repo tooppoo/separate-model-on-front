@@ -1,0 +1,51 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^test"
+      ]
+    },
+    "test:watch": {
+      "persistent": true,
+      "cache": false
+    },
+    "check-types": {
+      "dependsOn": [
+        "^transit"
+      ]
+    },
+    "lint": {
+      "outputs": [
+        ".eslintcache",
+        "node_modules/.cache/prettier/.prettier-cache"
+      ],
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "format": {
+      "outputs": [
+        ".eslintcache",
+        "node_modules/.cache/prettier/.prettier-cache"
+      ],
+      "dependsOn": [
+        "^format"
+      ]
+    },
+    "transit": {
+      "dependsOn": [
+        "^transit"
+      ]
+    }
+  }
+}

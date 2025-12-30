@@ -3,49 +3,26 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "engineStrict": true,
+  "engines": {
+    "npm": "USE_PNPM"
+  },
+  "packageManager": "pnpm@10.25.0",
   "scripts": {
-    "react:serve": "lerna run serve --scope=@example/react --stream",
-    "react:build": "lerna run build --scope=@example/react --stream",
-    "react:test": "lerna run test --scope=@example/react --stream",
-    "vue:serve": "lerna run serve --scope=@example/vue --stream",
-    "vue:build": "lerna run build --scope=@example/vue --stream",
-    "vue:test": "lerna run test --scope=@example/vue --stream",
-    "jquery:serve": "lerna run serve --scope=@example/jquery --stream",
-    "jquery:build": "lerna run build --scope=@example/jquery --stream",
-    "domain:cart:build": "lerna run build --scope=@example/domain-cart --stream",
-    "domain:cart:test": "lerna run test --scope=@example/domain-cart --stream",
-    "start": "yarn serve",
-    "serve": "lerna run serve --stream --parallel",
-    "build": "lerna run build --stream",
-    "build:watch": "lerna run build:watch --stream --parallel",
-    "test": "lerna run test --stream --parallel",
-    "clean": "lerna run clean --stream --parallel",
-    "packages": "lerna list"
+    "react": "pnpm --filter @example/react",
+    "vue": "pnpm --filter @example/vue",
+    "jquery": "pnpm --filter @example/jquery",
+    "domain": "pnpm --filter @example/domain",
+    "test": "turbo run test"
   },
   "keywords": [],
   "author": "philomagi<tooppoo56@gmail.com>",
-  "workspaces": {
-    "packages": [
-      "packages/**/*"
-    ],
-    "nohoist": [
-      "**/@vue/*",
-      "**/@babel/*",
-      "**/@jest/*",
-      "**/@parcel/*",
-      "**/react*",
-      "**/*/*babel*",
-      "**/*/*jest*",
-      "**/parcel"
-    ]
-  },
   "license": "MIT",
   "private": true,
-  "engines": {
-    "node": ">=14.0.0 || >=16.0.0 <17.0.0"
-  },
   "devDependencies": {
-    "lerna": "5.6.2"
-  },
-  "dependencies": {}
+    "turbo": "2.7.2",
+    "typescript": "5.9.3",
+    "vite": "7.3.0",
+    "vitest": "4.0.16"
+  }
 }

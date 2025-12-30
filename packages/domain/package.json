@@ -1,0 +1,11 @@
+{
+  "name": "@example/domain",
+  "version": "0.0.1",
+  "description": "domain model of ec application example, which is segregated from view",
+  "author": "philomagi <tooppoo56@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run"
+  }
+}

@@ -3,9 +3,9 @@ import {
   CartItemList,
   CountInCart,
   CartItemListRepository,
-} from '../../lib/model'
-import { CartInteraction } from '../../lib/controller/interaction'
-import { CartItemBuilder } from '../cart-item-builder'
+} from '../model'
+import { CartInteraction } from './interaction'
+import { CartItemBuilder } from '../../__tests__/cart-item-builder'
 
 const builder = CartItemBuilder.create()
 const item1 = builder.idIs('item-1').countIs(1).build().buyNow()

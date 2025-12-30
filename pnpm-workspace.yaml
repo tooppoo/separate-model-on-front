@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+enablePrePostScripts: false
+
+injectWorkspacePackages: true
+
+# minimumReleaseAge is specified in minutes; 1440 minutes = 24 hours.
+minimumReleaseAge: 1440

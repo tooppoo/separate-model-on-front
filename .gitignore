@@ -70,3 +70,6 @@ typings/
 
 # devbox
 .devbox/
+
+# turbo
+.turbo/
