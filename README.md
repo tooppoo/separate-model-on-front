@@ -14,63 +14,65 @@ example of frontend software design that separates Model and View.
 
 # usage
 ## initialize
-install and setup dependencies with [lerna](https://github.com/lerna/lerna)
-```
-make
+This project uses [pnpm](https://pnpm.io/) and [Turbo](https://turbo.build/) for monorepo management.
+
+Install dependencies:
+```bash
+pnpm install
 ```
 
 ## launch
-### launch all examples
-```
-yarn serve
-```
-
 ### launch an example
-```
-yarn vue:serve
-yarn react:serve
-yarn jquery:serve
-```
-
-## build
-### build all packages
-```
-yarn build
-yarn build:watch
-```
-
-### build a package
-```
-yarn domain:cart:build
-yarn vue:build
-yarn react:build
-yarn jquery:build
+```bash
+pnpm react dev
+pnpm vue dev
+pnpm jquery dev
 ```
 
 ## test
 ### test all packages
-```
-yarn test
+```bash
+pnpm test
 ```
 
-### test a package
-```
-yarn domain:cart:test
-yarn vue:test
-yarn react:test
+### test domain package
+```bash
+pnpm domain test
 ```
 
 # packages
 ## domain
-examples of Models that should be core knowledge in frontend software.
+Core domain models and business logic for the shopping cart application, independent of any UI framework.
 
-for example, a shopping cart for an e-commerce site.
-
-## vue
-Vue implementation of View that relies on Model to build the UI
+Includes:
+- **Model**: Cart items, value objects (price, count, state, etc.)
+- **Controller**: Interaction layer (CartInteraction) for business operations
+- **Infrastructure**: Repository implementations (on-memory storage)
 
 ## react
-React implementation of View that relies on Model to build the UI
+React implementation using the domain layer. Built with Vite and TypeScript.
+
+## vue
+Vue 3 implementation using the domain layer. Built with Vite and TypeScript.
 
 ## jquery
-jQuery implementation of View that relies on Model to build the UI
+jQuery implementation using the domain layer. Built with Vite and TypeScript.
+
+# architecture
+This project demonstrates clean architecture principles:
+
+1. **Domain Layer** (`@example/domain`): Framework-agnostic business logic
+   - Models define the core domain entities and value objects
+   - Controllers handle business operations and interactions
+   - Infrastructure provides repository implementations
+
+2. **View Layer** (react/vue/jquery): UI implementations that depend only on the domain layer
+   - Each framework implementation uses the same domain models
+   - Views are responsible only for rendering and user interaction
+   - Business logic is delegated to the domain layer
+
+This separation allows:
+- Testing business logic without UI frameworks
+- Switching UI frameworks without changing business logic
+- Reusing domain logic across different implementations
+- Better maintainability and explicit domain knowledge
