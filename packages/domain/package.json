@@ -5,6 +5,9 @@
   "author": "philomagi <tooppoo56@gmail.com>",
   "homepage": "",
   "license": "MIT",
+  "exports": {
+    "./*": "./lib/*.ts"
+  },
   "scripts": {
     "test": "vitest run"
   }

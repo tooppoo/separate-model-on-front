@@ -1,0 +1,20 @@
+{
+  "name": "@example/jquery",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.25.0",
+  "dependencies": {
+    "@example/domain": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/jquery": "3.5.33",
+    "jquery": "3.7.1"
+  }
+}
